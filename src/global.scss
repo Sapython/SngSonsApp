@@ -1,0 +1,327 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.25s;
+    border-radius: 50px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 7px;
+      width: 7px;
+      left: 4px;
+      bottom: 6px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+  }
+
+  input:checked + .slider {
+    background: #1540bd;
+
+    &.disabled {
+      background: #adadad;
+    }
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #1540bd;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+  }
+}
+
+.add-vehicle-wrapper-container {
+  background-color: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(206, 211, 241, 0.5);
+  backdrop-filter: blur(25px);
+  padding: 10px 15px 10px 15px;
+  border-radius: 50px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+  .inner-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .label {
+    color: var(--Primary, #1540bd);
+    font-size: 12px;
+    font-weight: 400;
+    width: 40%;
+    padding-left: 17px;
+  }
+
+  .button {
+    display: flex;
+    border-radius: 50px;
+    background: var(--Primary, #1540bd);
+    color: white;
+    width: 55%;
+    justify-content: space-between;
+    padding: 8px 20px 0px 20px;
+
+    p {
+      margin: 0px;
+    }
+
+    .button-name {
+      color: var(--Text2, #fff);
+      font-size: 14px;
+      font-weight: 400;
+      padding-top: 1px;
+    }
+
+    .symbol {
+    }
+  }
+}
+
+.row-data-wrapper-container {
+  padding: 15px 10px 10px 10px;
+  background-color: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(206, 211, 241, 0.5);
+  filter: drop-shadow(0px 4px 10px rgba(53, 122, 248, 0.1));
+  backdrop-filter: blur(25px);
+  border-radius: 15px;
+  margin-top: 10px;
+
+  .inner-container {
+    display: flex;
+    justify-content: space-between;
+
+    .img {
+      img,
+      div {
+        height: 36px;
+        width: 36px;
+        border: 2px solid var(--Tab-gradient, #1540bd);
+        box-shadow: 0px 4px 60px 0px #c6e0ff;
+        border-radius: 50%;
+      }
+    }
+
+    .data-text {
+      width: 60%;
+      p {
+        margin: 0px;
+      }
+
+      .address {
+        display: flex;
+        align-items: center;
+      }
+
+      .text-name {
+        color: var(--Primary, #1540bd);
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      .address-name,
+      .no,
+      .price {
+        color: var(--Text1, #505e86);
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      .address-name {
+        padding-right: 3px;
+      }
+
+      .no {
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+
+      .price {
+        color: #14ae5c;
+        padding-left: 3px;
+      }
+    }
+
+    .action-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .toogle {
+        padding-top: 5px;
+      }
+
+      .edit-button {
+        margin-left: 7px;
+        margin-right: 7px;
+      }
+    }
+  }
+}
+
+.preview-box {
+  width: 328px;
+  height: 191px;
+  margin: 20px auto;
+  border-radius: 12px;
+  border: 1px solid rgba(206, 211, 241, 0.62);
+  box-shadow: 0px 4px 60px 0px #c6e0ff;
+
+  img {
+    object-fit: cover;
+    border-radius: 12px;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+ion-modal {
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  overflow-y: auto !important;
+  --background: linear-gradient(
+    180deg,
+    #e8f2ff -14.44%,
+    #fff 13.92%,
+    #fff 88.77%,
+    #dbe9ff 110.22%
+  );
+  backdrop-filter: blur(10px);
+}
+
+ion-modal ion-content {
+  div {
+    margin-top: 20px;
+    margin-inline: auto;
+
+    ion-item {
+      margin: 8px auto;
+      --background: transparent;
+      --border-bottom: none;
+
+      svg {
+        margin-inline: auto;
+      }
+
+      ion-text {
+        color: var(--Primary, #1540bd);
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 100%; /* 20px */
+        letter-spacing: -0.22px;
+        margin: 0 auto;
+      }
+    }
+
+    .tab-bar {
+      width: 226px;
+      height: 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      padding: 8px;
+      border-radius: 60px;
+      background: rgba(168, 205, 255, 0.29);
+      backdrop-filter: blur(15px);
+      margin-top: 5px;
+
+      button {
+        height: 40px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        font-size: 14px;
+        background: #fff;
+        color: #1540bd;
+      }
+
+      .active-btn {
+        background: #1540bd !important;
+        color: #fff !important;
+      }
+    }
+  }
+}
+
+ion-modal::part(backdrop) {
+  background: #b3c5dd;
+  opacity: 1;
+}
+
+ion-modal {
+  --height: auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+ion-item.ion-touched.ion-invalid {
+  border: 1px solid red !important;
+}
+
+.hidden {
+  visibility: hidden !important;
+}
+
+.green-text {
+  color: #31bd58 !important;
+}
+
+.below-space {
+  height: 100px;
+}

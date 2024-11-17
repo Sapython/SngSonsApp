@@ -1,0 +1,36 @@
+<ion-content class="wrapper-home" [fullscreen]="true">
+  <div align="center" class="head ion-padding">
+    <app-head-user-bar></app-head-user-bar>
+    <div class="tab-array ion-padding-vertical">
+      <ion-button
+        (click)="changeTab('shipments')"
+        [ngClass]="{ active: tabStatus.shipments }"
+        shape="round"
+      >
+        Shipments
+      </ion-button>
+
+      <ion-button
+        (click)="changeTab('vehicles')"
+        [ngClass]="{ active: tabStatus.vehicles }"
+        shape="round"
+      >
+        Vehicles
+      </ion-button>
+
+      <ion-button
+        (click)="changeTab('vendors')"
+        [ngClass]="{ active: tabStatus.vendors }"
+        shape="round"
+      >
+        Vendors
+      </ion-button>
+    </div>
+  </div>
+
+  <div align="center" class="ion-padding-vertical">
+    <app-shipments *ngIf="tabStatus.shipments"></app-shipments>
+    <app-vehicles *ngIf="tabStatus.vehicles"></app-vehicles>
+    <app-vendors *ngIf="tabStatus.vendors"></app-vendors>
+  </div>
+</ion-content>
